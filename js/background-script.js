@@ -163,6 +163,7 @@ async function removeBookmark() {
     // Send request via background script
     var response = await fetch(apiURL, {
         method: "delete",
+        redirect: "error",
         body: JSON.stringify({url: tab.url}),
         headers: {
             "Content-Type": "application/json",
@@ -210,6 +211,7 @@ async function saveBookmark(tags) {
 
     var response = await fetch(apiURL, {
         method: "post",
+        redirect: "error",
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",

@@ -39,6 +39,7 @@ async function logout(server, session) {
     // Send logout request
     var response = await fetch(logoutURL, {
         method: "post",
+        redirect: "error",
         headers: {
             "X-Session-Id": session,
         }
@@ -82,6 +83,7 @@ async function login(server, username, password) {
     // Send login request
     var response = await fetch(loginURL, {
         method: "post",
+        redirect: "error",
         body: JSON.stringify({
             username: username,
             password: password,
